@@ -1,15 +1,18 @@
 import React from 'react'
 
-const Navbar = ({ searchTerm, setSearchTerm }) => {
-    return (
-        <div className='bg-black text-gray-300 fixed top-0 right-0 w-full z-10 '>
-            <div className='flex items-center justify-between gap-10 container'>
-                <h1>Welcome</h1>
-                <input type="text" className='outline-0 w-2xl py-2 px-5 rounded bg-gray-200 text-black text-lg' placeholder='Search here...' name='search'  value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}  />
-            </div>
-        </div>
-    )
+const Navbar = () => {
+  return (
+    <div className='bg-black text-gray-200 fixed top-0 right-0 w-full z-50 '>
+
+      <div className='container flex items-center gap-10'>
+
+        <h1 className='text-3xl font-semibold '>Plazy Store</h1>
+        <input type="search" className='bg-gray-200 rounded-full px-4 py-2 text-gray-800 text-lg outline-0 w-lg mx-auto'  placeholder='Search here...' />
+
+      </div>
+
+    </div>
+  )
 }
 
 export default Navbar
