@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element:<RootLayout/>,
     children:[
       {index:true , element:<App/>},
-      {path:"singleproduct" , element:<SingleProduct/>}
+      {path:":id" , element:<SingleProduct/>}
     ]
   }
 ])
