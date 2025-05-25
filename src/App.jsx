@@ -22,7 +22,7 @@ const App = () => {
 
         {
           datas.map((da) => (
-            <CardItem key={da.id} starrate={da.rating} image={da.images[0]} title={da.title} price={da.price} /> 
+            <CardItem key={da.id} starrate={da.rating} image={da.images[0]} title={da.title} price={da.price} id={da.id}/> 
           ))
         }
 

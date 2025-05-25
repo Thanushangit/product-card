@@ -5,7 +5,7 @@ import App from './App'
 import {createBrowserRouter, RouterProvider} from 'react-router-dom'
 import RootLayout from './RootLayout'
 import SingleProduct from './SingleProduct'
-import { FetchDatas } from './FetchDatas'
+import { FetchDatas, SingleFetchData } from './FetchDatas'
 
 
 const router=createBrowserRouter([
@@ -14,7 +14,7 @@ const router=createBrowserRouter([
     element:<RootLayout/>,
     children:[
       {index:true , element:<App/>, loader:FetchDatas},
-      {path:":id", element:<SingleProduct/>}
+      {path:":id", element:<SingleProduct/> , loader:SingleFetchData}
     ]
 
   }

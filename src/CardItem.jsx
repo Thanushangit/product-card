@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { FaStar, FaStarHalfAlt, FaRegStar } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-const CardItem = ({starrate=1,image="https://thumbs.dreamstime.com/b/delivery-box-intriguing-black-question-mark-solid-white-background-symbolizing-uncertainty-curiosity-open-349904319.jpg",title="item",price="idk"}) => {
+const CardItem = ({ starrate = 1, image = "https://thumbs.dreamstime.com/b/delivery-box-intriguing-black-question-mark-solid-white-background-symbolizing-uncertainty-curiosity-open-349904319.jpg", title = "item", price = "idk" , id}) => {
 
     const [star] = useState(starrate)
     const starArr = [];
@@ -27,7 +28,7 @@ const CardItem = ({starrate=1,image="https://thumbs.dreamstime.com/b/delivery-bo
 
 
     return (
-        <div>
+        <Link to={id.toString()} >
             <div className='border border-gray-200 shadow hover:shadow-2xl duration-500 transition-all'>
                 <div className='h-44 w-full overflow-hidden rounded-t'>
                     <img src={image} alt="image" className='w-full h-full object-center object-cover transition-all duration-700 hover:scale-110' />
@@ -36,11 +37,12 @@ const CardItem = ({starrate=1,image="https://thumbs.dreamstime.com/b/delivery-bo
                     <h1 className='text-lg font-semibold'>{title}</h1>
                     <div className='font-semibold text-lg my-1'>{GenerateStart()}</div>
                     <h1 className='font-bold text-xl'>Rs:-{parseFloat((price * 150.78).toFixed(2))
-}</h1>
+                    }
+                    </h1>
 
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }
 
