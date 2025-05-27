@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Navbar from './Navbar'
 import { Outlet } from 'react-router-dom'
 
 const RootLayout = () => {
+
+  const [sedata,setSedata]=useState();
+
+  const Handle=(val)=>{
+    setSedata(val)
+  }
   return (
     <div>
-      <Navbar/>
-      <Outlet/>
+      <Navbar onSearch={Handle} />
+      <Outlet context={{sedata}}/>
     </div>
   )
 }

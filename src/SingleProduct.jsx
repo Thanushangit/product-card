@@ -1,5 +1,6 @@
 import React from 'react'
 import { useLoaderData } from 'react-router-dom'
+import Star from './Star'
 
 const SingleProduct = () => {
 
@@ -24,7 +25,7 @@ const SingleProduct = () => {
 
           <div className="w-full">
             <h1 className='text-5xl  text-black/60 my-4'>{datas.title}</h1>
-            <div>*****</div>
+            <div className=''>{<Star count={datas.rating}/>}</div>
             <div className='flex items-center  gap-0'>
               <div className='space-y-0 w-1/2'>
                 <p className='uppercase text-gray-400 '>price</p>
