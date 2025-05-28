@@ -9,8 +9,6 @@ A React + Vite + Tailwind CSS project that displays a list of products with filt
 - Search functionality
 - Single product detail view
 
-
-
 ## Screenshots
 
 ### 🏠 Full Web App
@@ -19,21 +17,22 @@ A React + Vite + Tailwind CSS project that displays a list of products with filt
 
 ### 📦 Single Item Details
 
-![Single Item Details](images/single-item.png)
+![Single Item Details](https://github.com/user-attachments/assets/ab0fe759-ee7b-4a5c-9964-e91593c66fde)
 
 ### ❌ Not Found
 
-![Not Found Image](https://img.freepik.com/premium-vector/vector-illustration-about-concept-no-items-found-no-results-found_675567-6604.jpg)
+![Not Found Image](https://github.com/user-attachments/assets/db3299e6-a9e7-4c73-8361-e5d962bc81f2)
 
 ## Getting Started
 
-
 1. **Install dependencies:**
+
    ```sh
    npm install
    ```
 
 2. **Run the development server:**
+
    ```sh
    npm run dev
    ```
@@ -42,8 +41,6 @@ A React + Vite + Tailwind CSS project that displays a list of products with filt
    ```sh
    npm run build
    ```
-
-
 
 ## Tech Stack
 
@@ -59,5 +56,3 @@ A React + Vite + Tailwind CSS project that displays a list of products with filt
 - [dummyjson.com/products](https://dummyjson.com/products)
 
 ---
-
-
