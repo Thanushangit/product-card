@@ -8,6 +8,7 @@ A React + Vite + Tailwind CSS project that displays a list of products with filt
 - Sidebar filters: category, price sort, and minimum rating
 - Search functionality
 - Single product detail view
+- Responsive 
 
 ## Screenshots
 
