@@ -5,6 +5,7 @@ export const FetchDatas = async () => {
       throw new Error("Fetching issue");
     }
     const data = await res.json();
+    
    
     return data.products;
   } catch (err) {

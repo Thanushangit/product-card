@@ -1,10 +1,12 @@
 import React from 'react'
-import { useLoaderData } from 'react-router-dom'
+import { data, useLoaderData } from 'react-router-dom'
 import Star from './Star'
 
 const SingleProduct = () => {
 
   const datas = useLoaderData()
+
+  const cate=datas.category.charAt(0).toUpperCase() + datas.category.slice(1)
 
   console.log(datas)
   return (
@@ -24,7 +26,8 @@ const SingleProduct = () => {
         <div className='w-full md:w-2/3 flex flex-col items-center'>
 
           <div className="w-full">
-            <h1 className='text-5xl  text-black/60 my-4'>{datas.title}</h1>
+            <h1 className='text-5xl  text-black/60 mt-4'>{datas.title}</h1>
+            <p className='title-line-1 text-gray-500 mb-4 mt-2 text-lg'>{cate}</p>
             <div className=''>{<Star count={datas.rating}/>}</div>
             <div className='flex items-center  gap-0'>
               <div className='space-y-0 w-1/2'>

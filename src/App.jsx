@@ -79,6 +79,7 @@ const App = () => {
                 title={item.title}
                 price={item.price}
                 id={item.id}
+                category={item.category}
               />
             ))
           ) : (

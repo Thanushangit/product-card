@@ -2,9 +2,19 @@
 import { Link } from 'react-router-dom';
 import Star from './Star';
 
-const CardItem = ({ image = "https://thumbs.dreamstime.com/b/delivery-box-intriguing-black-question-mark-solid-white-background-symbolizing-uncertainty-curiosity-open-349904319.jpg", title = "item", price = "idk" , id,starrate=1}) => {
+const CardItem = ({ image = "https://thumbs.dreamstime.com/b/delivery-box-intriguing-black-question-mark-solid-white-background-symbolizing-uncertainty-curiosity-open-349904319.jpg", title = "item", price = "idk", id, starrate = 1, category = "unknown" }) => {
 
-   
+
+
+    function CategoryHandle(val) {
+        if (val !== "unknown") {
+            const firstLetter = val.charAt(0).toUpperCase();
+            const finalCategory = firstLetter + val.slice(1);
+            return finalCategory;
+        }
+    }
+
+
 
 
 
@@ -17,10 +27,14 @@ const CardItem = ({ image = "https://thumbs.dreamstime.com/b/delivery-box-intrig
                 </div>
                 <div className='px-2 py-4'>
                     <h1 className='text-lg font-semibold title-line-1'>{title}</h1>
-                    <div className='font-semibold text-lg my-1'>{<Star count={starrate}/>}</div>
-                    <h1 className='font-bold text-xl'>Rs:-{parseFloat((price * 150.78).toFixed(2))
-                    }
-                    </h1>
+                    <div className='font-semibold text-lg my-1'>{<Star count={starrate} />}</div>
+                    <div className='flex md:items-center md:justify-between gap-x-2 flex-col md:flex-row'>
+                        <h1 className='font-bold text-xl'>Rs:-{parseFloat((price * 150.78).toFixed(2))
+                        }
+                        </h1>
+                        <p className='title-line-1 text-gray-500'>{CategoryHandle(category)}</p>
+                    </div>
+
 
                 </div>
             </div>
