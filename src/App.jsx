@@ -2,6 +2,8 @@ import SideBar from './SideBar';
 import { useLoaderData, useOutletContext } from 'react-router-dom';
 import CardItem from './CardItem';
 import { useState, useEffect } from 'react';
+import { MdMenuOpen } from "react-icons/md";
+import { IoCloseOutline } from "react-icons/io5";
 
 const App = () => {
   const { sedata } = useOutletContext(); // search input from parent route (if any)
@@ -9,6 +11,7 @@ const App = () => {
   const rawData = useLoaderData(); // loaded data from loader
   const [data, setData] = useState([]);
   const [sideBarData, setSideBarData] = useState({});
+  const [stateMenu,setSetMenu] = useState(true);
 
   useEffect(() => {
     if (sedata !== undefined) {
@@ -63,13 +66,17 @@ const App = () => {
   const filteredData = getFilteredData();
 
   return (
-    <div className=' flex sm:static items-start  justify-between gap-10  mt-35 md:mt-30'>
-      <div className='w-1/5 '>
-        <SideBar sideBarData={handleSidebarData} />
+    <div className=' flex flex-col sm:flex-row items-start  justify-center sm:justify-end gap-10  mt-35 md:mt-30   relative '>
+      <div className={`w-full sm:w-1/5 absolute sm:fixed top-0 left-0  transition-all duration-500 ${stateMenu ? 'left-0' : 'left-[-93%]'} `}>
+       <div className={`flex items-start justify-between gap-3 ${stateMenu ? "bg-gray-300":"bg-transparent"}`}>
+         <SideBar sideBarData={handleSidebarData} />
+         <p className='text-2xl mt-5 transition-all duration-500 sm:hidden' onClick={()=>setSetMenu(!stateMenu)}>{stateMenu?<IoCloseOutline />:<MdMenuOpen />}</p>
+       </div>
+
       </div>
 
-      <div className='flex items-center justify-end  w-4/5 md:w-full '>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-3 container'>
+      <div className='flex items-center justify-center lg:justify-end w-full sm:w-4/5 '>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-2 container'>
           {filteredData.length > 0 ? (
             filteredData.map(item => (
               <CardItem

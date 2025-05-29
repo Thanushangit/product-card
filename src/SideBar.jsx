@@ -24,7 +24,7 @@ const SideBar = ({ sideBarData }) => {
     
 
     return (
-        <div className='fixed top-30 left-0 sm:w-fit container z-10 w-full accent-blue-500 '>
+        <div className=' sm:fixed sm:top-30 sm:left-0 sm:w-fit container z-10 w-full accent-blue-500 overflow-hidden'>
             <div className='flex items-center gap-3 justify-between border-b-2 border-gray-300 p-2'>
                 <h1 className='text-xl font-semibold'>Filters</h1>
                
@@ -65,7 +65,7 @@ const SideBar = ({ sideBarData }) => {
                 </div>
 
                 {/* Rating */}
-                <div className='border-b-2 border-gray-300 p-2'>
+                <div className='p-2'>
                     <h1 className='text-lg mb-3 flex items-center gap-2'>Rating <span className='inline-block h-fit'>{rangeValue}</span></h1>
                     <label className='flex items-center gap-3'>
                         <input
