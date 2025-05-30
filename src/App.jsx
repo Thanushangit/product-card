@@ -76,7 +76,7 @@ const App = () => {
       </div>
 
       <div className='flex items-center justify-center lg:justify-end w-full sm:w-4/5 '>
-        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-6 gap-2 container'>
+        <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-2 container'>
           {filteredData.length > 0 ? (
             filteredData.map(item => (
               <CardItem
